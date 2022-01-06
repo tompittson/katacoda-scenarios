@@ -1,10 +1,10 @@
-In this step we will create the individual directories and files that will later be combined into our union (overlay) filesystem.
+In this step we will create the individual directories and files that will be combined into our union (overlay) filesystem. We will then mount that filesystem ready for the next step.
 
 ## Directories
 
-Create a directory called overlay `mkdir overlay`{{execute}}
+Create a directory called overlay `mkdir mount`{{execute}}
 
-The **overlay** directory will be the one that contains the union of all the directories we create.
+The **mount** directory will be the one that contains the union of all the directories we create.
 
 Create the directories for the individual layers `mkdir layer1 layer2 layer3 read-write-layer`{{execute}}
 
@@ -20,20 +20,20 @@ Create a file in each of the layers:
 
 ```sh
 echo 'Layer 1' >>layer1/file-in-layer-1
-echo 'Layer 2' >>layer1/file-in-layer-2
-echo 'Layer 3' >>layer1/file-in-layer-3
+echo 'Layer 2' >>layer2/file-in-layer-2
+echo 'Layer 3' >>layer3/file-in-layer-3
 ```{{execute}}
 
 ## Mount Filesystem
 
-Overlay filesystems (also called union filesystems) allow creating a union of two or more directories: a list of lower directories and an upper directory. The lower directories of the filesystem are read only, whereas the upper directory can be used for both reads and writes.
+Overlay filesystems are created from a union of two or more directories. They are defined from a list of lower directories and an upper directory. The lower directories of the filesystem are read-only, whereas the upper directory is read-write. The lower directories are applied in order to create the final filesystem visible in the mount, later directories can change the files from previous directories (or layers).
 
 Mount the filesystem using the directories created in the previous step:
 
 ```sh
-sudo mount -t overlay overlay-example \
+mount -t overlay overlay-example \
 -o lowerdir=/root/layer1:/root/layer2:/root/layer3,upperdir=/root/read-write-layer,workdir=/root/workdir \
 /root/mount
 ```{{execute}}
 
-
+Check the filesystem has been mounted as expected `ls -al mount`{{execute}}
