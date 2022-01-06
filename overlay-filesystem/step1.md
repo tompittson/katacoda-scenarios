@@ -8,7 +8,7 @@ The **mount** directory will be the one that contains the union of all the direc
 
 Create the directories for the individual layers `mkdir layer1 layer2 layer3 read-write-layer`{{execute}}
 
-Finally create a directory called workdir which is needed by the overlay filsystem `mkdir workdir`{{execute}}
+Finally create a directory called **workdir** which is needed by the overlay filsystem `mkdir workdir`{{execute}}
 
 Check the directories `ls`{{execute}}
 
@@ -24,9 +24,11 @@ echo 'Layer 2' >>layer2/file-in-layer-2
 echo 'Layer 3' >>layer3/file-in-layer-3
 ```{{execute}}
 
+Check the files `ls -R`{{execute}}
+
 ## Mount Filesystem
 
-Overlay filesystems are created from a union of two or more directories. They are defined from a list of lower directories and an upper directory. The lower directories of the filesystem are read-only, whereas the upper directory is read-write. The lower directories are applied in order to create the final filesystem visible in the mount, later directories can change the files from previous directories (or layers).
+Overlay filesystems are created from a union of two or more directories. They are defined from a list of **lower** directories and an **upper** directory. The lower directories of the filesystem are read-only, whereas the upper directory is read-write. The lower directories are applied in order to create the final filesystem visible in the mount, later directories can change the files from previous directories (or layers).
 
 Mount the filesystem using the directories created in the previous step:
 
@@ -37,3 +39,5 @@ mount -t overlay overlay-example \
 ```{{execute}}
 
 Check the filesystem has been mounted as expected `ls -al mount`{{execute}}
+
+> You should see the three different files from the separate layer1..3 directories all listed in the mount directory.

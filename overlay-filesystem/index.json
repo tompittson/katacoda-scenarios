@@ -10,11 +10,11 @@
                 "text": "step1.md"
             },
             {
-                "title": "Examine Filesystem",
+                "title": "Examine Read-Write Layer",
                 "text": "step2.md"
             },
             {
-                "title": "Step 3",
+                "title": "Examine Read-Only Layers",
                 "text": "step3.md"
             }
         ],
