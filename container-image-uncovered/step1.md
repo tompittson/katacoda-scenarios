@@ -14,11 +14,11 @@ View the pulled image files from the tar `ls -alR redis`{{execute}}
 
 View the **oci-layout** file contents `cat redis/oci-layout`{{execute}}
 
-View the **index.json** file contents `cat redis/index.json`{{execute}}
+View the **index.json** file contents `cat redis/index.json | jq`{{execute}}
 
 The index.json file points at the manifest file which is one of the blobs downloaded.
 
-View the manifest file `cat redis/blobs/sha256/563888f63149e3959860264a1202ef9a644f44ed6c24d5c7392f9e2262bd3553`{{execute}}
+View the manifest file `cat redis/blobs/sha256/563888f63149e3959860264a1202ef9a644f44ed6c24d5c7392f9e2262bd3553 | jq`{{execute}}
 
 We now have a list of the image layers and also a reference to the config which is stored in another blob.
 
