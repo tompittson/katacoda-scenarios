@@ -1,7 +1,7 @@
 {
   "title": "Containerising and Operating Products and Applications",
   "description": "A detailed look at how to implement a standard approach to containerising and operating products and applications. The course builds on real world experience of delivering container-based solutions for customers, providing guidance and best practice on some of the most challenging areas.",
-  "private": "false",
+  "private": "true",
   "courses": [
     {
       "pathway_id": "tom-pittson",
