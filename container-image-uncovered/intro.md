@@ -1,0 +1,1 @@
+In this scenario, you will take a look inside a container image to better understand the structure and the OCI image-spec standard.
