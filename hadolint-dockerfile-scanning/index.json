@@ -6,7 +6,7 @@
     "details": {
         "steps": [
             {
-                "title": "Scan Dockerfile",
+                "title": "Dockerfile Scan",
                 "text": "step1.md"
             },
             {
