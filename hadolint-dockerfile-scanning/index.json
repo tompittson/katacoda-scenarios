@@ -29,7 +29,6 @@
     "environment": {
         "uilayout": "editor-terminal",
         "hideHiddenFiles": true,
-        "uisettings": "javascript",
         "uieditorpath": "/root/"
     },
     "files": [ "Dockerfile" ],
