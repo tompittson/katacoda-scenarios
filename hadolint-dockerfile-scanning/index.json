@@ -31,7 +31,6 @@
         "hideHiddenFiles": true,
         "uieditorpath": "/root/"
     },
-    "files": [ "Dockerfile" ],
     "backend": {
         "imageid": "ubuntu"
     }
