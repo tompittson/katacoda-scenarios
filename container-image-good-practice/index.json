@@ -38,12 +38,14 @@
         },
         "assets": {
             "client": [
-                { "file": "step2/*", "target": "~/step2" }
+                { "file": "*", "target": "~/" }
             ]
         }
     },
     "environment": {
-        "uilayout": "terminal"
+        "uilayout": "editor-terminal",
+        "hideHiddenFiles": true,
+        "uieditorpath": "/root/"
     },
     "backend": {
         "imageid": "ubuntu"
