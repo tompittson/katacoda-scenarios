@@ -2,11 +2,11 @@ In this step we will create the individual directories and files that will be co
 
 ## Directories
 
-Create a directory called overlay `mkdir mount`{{execute}}
+Create a directory called **mount** `mkdir mount`{{execute}}
 
 The **mount** directory will be the one that contains the union of all the directories we create.
 
-Create the directories for the individual layers `mkdir layer1 layer2 layer3 read-write-layer`{{execute}}
+Create the directories that represent the individual layers `mkdir layer1 layer2 layer3 read-write-layer`{{execute}}
 
 Finally create a directory called **workdir** which is needed by the overlay filsystem `mkdir workdir`{{execute}}
 

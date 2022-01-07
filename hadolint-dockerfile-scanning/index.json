@@ -1,0 +1,37 @@
+{
+    "title": "Hadolint Dockerfile Scanning",
+    "description": "Use hadolint to scan a Dockerfile for issues and then fix those issues",
+    "difficulty": "medium",
+    "time": "10 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Scan Dockerfile",
+                "text": "step1.md"
+            },
+            {
+                "title": "Fix Issues",
+                "text": "step2.md"
+            }
+        ],
+        "intro": {
+            "text": "intro.md"
+        },
+        "finish": {
+            "text": "finish.md"
+        },
+        "assets": {
+            "host01": [
+                { "file": "Dockerfile", "target": "/root/" }
+            ]
+        }
+    },
+    "environment": {
+        "uilayout": "editor-terminal",
+        "uieditorpath": "/root/"
+    },
+    "files": [ "Dockerfile" ],
+    "backend": {
+        "imageid": "ubuntu"
+    }
+}
