@@ -1,0 +1,51 @@
+{
+    "title": "Container Image Good Practice",
+    "description": "Step through different stages of applying good practice to container image creation such as minimising size, multi-stage builds, version pinning, running as non-root and image hardening.",
+    "difficulty": "medium",
+    "time": "40 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Comparing Image Sizes",
+                "text": "step1.md"
+            },
+            {
+                "title": "Multi-stage Builds",
+                "text": "step2.md"
+            },
+            {
+                "title": "Version Pinning",
+                "text": "step3.md"
+            },
+            {
+                "title": "Running as Non-root",
+                "text": "step4.md"
+            },
+            {
+                "title": "Image Hardening",
+                "text": "step5.md"
+            },
+            {
+                "title": "Distroless Base Images",
+                "text": "step6.md"
+            }
+        ],
+        "intro": {
+            "text": "intro.md"
+        },
+        "finish": {
+            "text": "finish.md"
+        },
+        "assets": {
+            "client": [
+                { "file": "step2/*", "target": "~/step2" }
+            ]
+        }
+    },
+    "environment": {
+        "uilayout": "terminal"
+    },
+    "backend": {
+        "imageid": "ubuntu"
+    }
+}
