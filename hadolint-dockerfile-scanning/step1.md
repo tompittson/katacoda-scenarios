@@ -8,7 +8,7 @@ Test the image `docker run --rm curl --version`{{execute}}
 
 ## Hadolint Scan
 
-Hadolint can be executed locally from the binary, as a Visual Studio Code extension or from a container image. In this example we will use Docker to run the latest vesion of hadolint from a container image.
+Hadolint can be executed locally from the binary, as a Visual Studio Code extension or from a container image. In this scenario we will use Docker to run the latest vesion of hadolint from a container image.
 
 Scan the Dockerfile `docker run --rm -i hadolint/hadolint < Dockerfile`{{execute}}
 

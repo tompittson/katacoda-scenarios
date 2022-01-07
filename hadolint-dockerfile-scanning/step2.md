@@ -14,7 +14,7 @@ RUN addgroup -S -g 1001 nonroot \
 
 # add --no-cache flag (removes the need to apk update and rm /var/cache/apk/*)
 # specify the curl version
-RUN apk add --no-cache curl=7.74.0-r1
+RUN apk add --no-cache curl=7.79.1-r0
 
 # specify the nonroot user
 USER 1001:1001

@@ -21,13 +21,15 @@
             "text": "finish.md"
         },
         "assets": {
-            "host01": [
-                { "file": "Dockerfile", "target": "/root/" }
+            "client": [
+                { "file": "Dockerfile", "target": "~/" }
             ]
         }
     },
     "environment": {
         "uilayout": "editor-terminal",
+        "hideHiddenFiles": true,
+        "uisettings": "javascript",
         "uieditorpath": "/root/"
     },
     "files": [ "Dockerfile" ],
