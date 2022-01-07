@@ -1,4 +1,4 @@
-FROM golang
+FROM mirror.gcr.io/library/golang
 
 WORKDIR /go/src/app
 COPY main.go .

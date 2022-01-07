@@ -27,8 +27,8 @@ View the sizes of the different images `docker image ls | grep -E '(nginx|alpine
 
 Use the **docker inspect** command to view information about the Debian based image `docker inspect nginx:1.20.2`{{execute}}
 
-View the image history `docker history nginx:1.20.2 --no-trunc`{{execute}}
+View the image history `docker history nginx:1.20.2`{{execute}}
 
-You can compare this with the [Dockerfile](https://github.com/nginxinc/docker-nginx/blob/b0e153a1b644ca8b2bd378b14913fff316e07cf2/stable/debian/Dockerfile) linked to by clicking the tag on [Docker Hub](https://hub.docker.com/_/nginx)
+You can compare this with the [Dockerfile](https://github.com/nginxinc/docker-nginx/blob/b0e153a1b644ca8b2bd378b14913fff316e07cf2/stable/debian/Dockerfile) the different Dockerfiles are linked to on the nginx image [Docker Hub](https://hub.docker.com/_/nginx) page.
 
 > Note that the history does not show the FROM instruction, it simply takes the layers from the parent image.

@@ -4,11 +4,11 @@ In this step you are going to create an image for a simple go application. The f
 
 Change to the step2 directory `cd ~/step2`{{execute}}
 
-Take a look at the go application `~/step2/main.go`{{open}}
+Take a look at the go application `step2/main.go`{{open}}
 
 > This is a simple application which outputs some information about the running container.
 
-Take a look at the Dockerfile for the application `~/step2/Dockerfile`{{open}}
+Take a look at the Dockerfile for the application `step2/Dockerfile`{{open}}
 
 > The application is built as part of the container build.
 
@@ -16,19 +16,12 @@ Build the container image `docker image build -t step2:normal .`{{execute}}
 
 ## Check Image
 
-Run the application
-
-```bash
-docker run --rm step2:normal
+Run the application `docker run --rm step2:normal`{{execute}}
 ```
 
-Check the image size
+Check the image size `docker image ls step2:normal`{{execute}}
 
-```bash
-docker image ls step2:normal
-```
-
-> Over 800MB for a simple Go application! The problem is that the base image we are using includes all the sdk for building go applications, we don't need that to run our application.
+> Over 900MB for a simple Go application! The problem is that the base image we are using includes all the sdk for building go applications, we don't need that to run our application.
 
 ## Multi-stage Builds
 
@@ -36,9 +29,9 @@ docker image ls step2:normal
 
 Update the Dockerfile to use a multi-stage build
 
-<pre class="file" data-filename="~/step2/Dockerfile" data-target="replace">
+<pre class="file" data-filename="step2/Dockerfile" data-target="replace">
 # build image
-FROM golang as builder
+FROM mirror.gcr.io/library/golang as builder
 
 WORKDIR /go/src/app
 COPY main.go .
@@ -63,6 +56,6 @@ Build the new image `docker image build -t step2:multi-alpine .`{{execute}}
 
 Run the new image to make sure it still works `docker run --rm step2:multi-alpine`{{execute}}
 
-Check the new image size `docker image ls step2:multi-alpine`
+Check the new image size `docker image ls step2:multi-alpine`{{execute}}
 
 > Less than 10MB, a significant improvement from the previous image.
