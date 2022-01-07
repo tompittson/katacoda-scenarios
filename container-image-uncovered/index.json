@@ -19,7 +19,7 @@
             "text": "finish.md"
         },
         "assets": {
-            "host01": [
+            "client": [
                 {"file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x"}
             ]
         }
