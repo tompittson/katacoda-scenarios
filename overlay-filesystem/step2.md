@@ -10,9 +10,11 @@ Lets look at the changed filesystem `ls -R`{{execute}}
 
 ## Edit File
 
+Lets see what happens when we modify a file created in one of the lower (read-only) directories.
+
 First check the contents of **file-in-layer-1** `cat mount/file-in-layer-1`{{execute}}
 
-Now add some content to the file `echo 'Read-write Layer' >>mount/file-in-layer-1`{{execute}}
+Now add some content to the file `echo 'I have been changed' >>mount/file-in-layer-1`{{execute}}
 
 Now check the contents again `cat mount/file-in-layer-1`{{execute}}
 
@@ -32,4 +34,4 @@ Lets look at the changed filesystem `ls -R`{{execute}}
 
 Lets take a closer look at the new file in the read-write-layer `ls -al read-write-layer/file-in-layer-2`{{execute}}
 
-> A character file has been created in the read-write layer. These kinds of files are called "whiteout" files and are how the overlay filesystem represents a file being deleted.
+> A character file has been created in the read-write layer. This kind of file is called a "whiteout" file and is how the overlay filesystem represents a file being deleted.

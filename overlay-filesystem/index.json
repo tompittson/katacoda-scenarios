@@ -2,7 +2,7 @@
     "title": "Overlay Filesystem",
     "description": "Use the overlay filesystem to better understand how container image layers work",
     "difficulty": "medium",
-    "time": "10 minutes",
+    "time": "20 minutes",
     "details": {
         "steps": [
             {

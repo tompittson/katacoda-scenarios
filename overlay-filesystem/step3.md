@@ -4,11 +4,13 @@ We have looked at what happens if we change files in the read-write layer. We wi
 
 Unmount the overlay filesystem used in the previous step `umount mount`{{execute}}
 
-Remove the file create in the previous step `rm layer4/file-in-rw-layer`{{execute}}
+Remove the file create in the previous step `rm read-write-layer/file-in-rw-layer`{{execute}}
 
 Rename the read-write-layer directory to layer4 `mv read-write-layer layer4`{{execute}}
 
 Create a new read-write-layer directory `mkdir read-write-layer`{{execute}}
+
+Check the filesystem `ls -R`{{execute}}
 
 > We now have 4 lower directories representing the read-only layers, in layer4 we have a modification to the file in layer1 and a deletion of the file in layer2.
 
@@ -18,9 +20,9 @@ Mount the overlay filesystem again this time with the 4 lower directories:
 
 ```
 mount -t overlay overlay-example \
--o lowerdir=/root/layer1:/root/layer2:/root/layer3:/root/layer4,upperdir=/root/read-write-layer,workdir=/root/workdir \
+-o lowerdir=/root/layer4:/root/layer3:/root/layer2:/root/layer1,upperdir=/root/read-write-layer,workdir=/root/workdir \
 /root/mount
-```
+```{{execute}}
 
 ## Examine Filesystem
 
@@ -38,18 +40,18 @@ One of the great things about container images and their use of the union file s
 
 Lets see an example of this.
 
-Create a second mount, read-write-layer and layer4 directory that we will use to simulate our second container instance `mkdir mount-b read-write-layer-b layer4-b`
+Create a second mount, read-write-layer and layer4 directory that we will use to simulate our second container instance `mkdir mount-b read-write-layer-b layer4-b`{{execute}}
 
 Create a new mount using the new directories as well as the original layer1..3:
 
 ```
 mount -t overlay overlay-example \
--o lowerdir=/root/layer1:/root/layer2:/root/layer3:/root/layer4-b,upperdir=/root/read-write-layer-b,workdir=/root/workdir \
+-o lowerdir=/root/layer4-b:/root/layer3:/root/layer2:/root/layer1,upperdir=/root/read-write-layer-b,workdir=/root/workdir \
 /root/mount-b
-```
+```{{execute}}
 
 Make a change in the mount-b directory `echo 'Mount-b file' >>mount-b/file-in-mount-b-rw-layer`{{execute}}
 
 Now lets take a look at the filesystem `ls -lR`{{execute}}
 
-> Sharing the same layer1..3 we can see that in mount-b we can't see any of the changes in layer4 and in mount we can't see the file just created. This demonstrates how in running containers layers are shared but we also have isolation between the read-write layers.
+> Sharing the same layer1..3 we can see that in mount-b we can't see any of the changes in layer4 and in mount we can't see the file just created in mount-b. This demonstrates how in running containers layers can be shared but we also have isolation between the read-write layers.

@@ -28,13 +28,13 @@ Check the files `ls -R`{{execute}}
 
 ## Mount Filesystem
 
-Overlay filesystems are created from a union of two or more directories. They are defined from a list of **lower** directories and an **upper** directory. The lower directories of the filesystem are read-only, whereas the upper directory is read-write. The lower directories are applied in order to create the final filesystem visible in the mount, later directories can change the files from previous directories (or layers).
+Overlay filesystems are created from a union of two or more directories. They are defined from a list of **lower** directories and an **upper** directory. The lower directories of the filesystem are read-only, whereas the upper directory is read-write. The lower directories are applied in **reverse** order to create the final filesystem visible in the mount, so the first directory in the list has the highest precedence and can change the files from previous directories (or layers).
 
 Mount the filesystem using the directories created in the previous step:
 
 ```sh
 mount -t overlay overlay-example \
--o lowerdir=/root/layer1:/root/layer2:/root/layer3,upperdir=/root/read-write-layer,workdir=/root/workdir \
+-o lowerdir=/root/layer3:/root/layer2:/root/layer1,upperdir=/root/read-write-layer,workdir=/root/workdir \
 /root/mount
 ```{{execute}}
 

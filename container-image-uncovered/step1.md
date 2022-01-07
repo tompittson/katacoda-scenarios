@@ -10,7 +10,7 @@ Pull the image `crane pull --format oci --platform linux/amd64 redis:6.2@sha256:
 
 The command above creates a directory containing all the image files in the [OCI](https://github.com/opencontainers/image-spec/blob/main/spec.md) layout format.
 
-View the pulled image files from the tar `ls -alR redis`{{execute}}
+View the pulled image files from the image `ls -alR redis`{{execute}}
 
 View the **oci-layout** file contents `cat redis/oci-layout`{{execute}}
 
@@ -24,6 +24,6 @@ We now have a list of the image layers and also a reference to the config which 
 
 View the config file `cat redis/blobs/sha256/7614ae9453d1d87e740a2056257a6de7135c84037c367e1fffa92ae922784631 | jq`{{execute}}
 
-> Note the history stored in the config, this shows all of the different layers, many of these are empty layers which do not modify the filesystem but instead contain metadata which when built from a Dockerfile set the configuration of the container at runtime.
+> Note the history stored in the config, this shows all of the different commands that created the layers, many of these are empty layers which do not modify the filesystem but instead contain metadata which, when built from a Dockerfile, set the configuration of the container at runtime. The final configuration can be seen earlier in the file. Note the Env, Cmd, Entrypoint, ExposedPorts and Volumes sections.
 
 
