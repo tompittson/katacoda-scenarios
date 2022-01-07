@@ -17,7 +17,6 @@ Build the container image `docker image build -t step2:normal .`{{execute}}
 ## Check Image
 
 Run the application `docker run --rm step2:normal`{{execute}}
-```
 
 Check the image size `docker image ls step2:normal`{{execute}}
 
