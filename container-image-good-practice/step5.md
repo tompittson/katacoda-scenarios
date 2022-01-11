@@ -12,6 +12,8 @@ Create a new file `echo "File created" >> /tmp/test-file`{{execute}}
 
 Check the new file `cat /tmp/test-file`{{execute}}
 
+Exit the container `exit`{{execute}}
+
 ## Read-only filesystem
 
 Change to the step5 directory `cd ~/step5`{{execute}}
@@ -28,11 +30,13 @@ Build the container image `docker image build -t step5:multi-alpine-read-only .`
 
 Run the application to check it still works `docker run --rm step5:multi-alpine-read-only`{{execute}}
 
-Run the image with an interactive shell `docker run --rm -it step5:multi-alpine-read-only sh`
+Run the image with an interactive shell `docker run --rm -it step5:multi-alpine-read-only sh`{{execute}}
 
 Create a file in the /tmp directory `echo "File created" >> /tmp/test-file`{{execute}}
 
-> This will no longer work (???)
+> This will no longer work (Permission denied)
+
+Exit the container `exit`{{execute}}
 
 ## Remove the shell
 
@@ -81,7 +85,7 @@ Run the application to check it still works `docker run --rm step5:multi-alpine-
 
 Try to run the image with an interactive shell like before `docker run --rm -it step5:multi-alpine-no-shell sh`{{execute}}
 
-> This will not work (executable file not found in $PATH)
+> This will not work (executable file not found in $PATH: unknown)
 
 Check the size of the new image `docker image ls | grep step5`{{execute}}
 
