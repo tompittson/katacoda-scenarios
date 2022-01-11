@@ -1,4 +1,4 @@
-Containers run as root by default which means that if the application is exploited or the base image contains malware it has full permission within the container and can write files to the host as the root user (container breakout).
+Containers run as root by default which means that if the application is exploited or the parent image contains malware it has full permission within the container and can write files to the host as the root user (container breakout).
 
 Some platforms, such as OpenShift, prevent containers running as root and it is good practice to run as a non-root user.
 

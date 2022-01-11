@@ -18,6 +18,19 @@ func main() {
     fmt.Println("GID:", u.Gid)
     fmt.Println("Group name:", grp.Name)
     fmt.Println()
+
+    path, err := os.Getwd()
+    if err != nil {
+        fmt.Println(err)
+    }
+    fmt.Println("Working Directory:", path)
+
+    executable, err := os.Executable()
+    if err != nil {
+        fmt.Println(err)
+    }
+    fmt.Println("Executable:", executable)
+    fmt.Println()
     
     fmt.Println("Environment variables:")
     for _, pair := range os.Environ() {

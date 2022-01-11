@@ -20,7 +20,7 @@ Run the application `docker run --rm step2:normal`{{execute}}
 
 Check the image size `docker image ls step2:normal`{{execute}}
 
-> Over 900MB for a simple Go application! The problem is that the base image we are using includes all the sdk for building go applications, we don't need that to run our application.
+> Over 900MB for a simple Go application! The problem is that the parent image we are using includes all the sdk for building go applications, we don't need that to run our application.
 
 ## Multi-stage Builds
 

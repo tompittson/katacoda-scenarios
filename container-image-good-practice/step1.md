@@ -21,7 +21,7 @@ docker image pull alpine:3.14
 
 View the sizes of the different images `docker image ls | grep -E '(nginx|alpine)[ ]+[0-9].*'`{{execute}}
 
-> The normal nginx image is based on Debian hence the big size difference. The alpine image is used as the base image for the nginx alpine variant.
+> The normal nginx image is based on Debian hence the big size difference. The alpine image is used as the parent image for the nginx alpine variant.
 
 ## Inspect the Image
 

@@ -14,11 +14,11 @@ Build the container image `docker image build -t step3:multi-alpine .`{{execute}
 
 Run the application to check it still works `docker run --rm step3:multi-alpine`{{execute}}
 
-## Base Image Digests
+## Parent Image Digests
 
-> Although we are using tags for both base images in the Dockerfile these tags are mutable and the underlying image may be changed. You can reference the image using the digest as well which gives more assurance that the same image is being used for every build.
+> Although we are using tags for both parent images in the Dockerfile these tags are mutable and the underlying image may be changed. You can reference the image using the digest as well which gives more assurance that the same image is being used for every build.
 
-Pull the two base images used (all the layers should already exist)
+Pull the two parent images used (all the layers should already exist)
 
 ```
 docker image pull golang:1.17.6
@@ -34,7 +34,7 @@ docker image inspect alpine:3.14 | grep -A1 RepoDigests
 
 ## Update Dockerfile
 
-Update the Dockerfile to reference the base images using the image digests
+Update the Dockerfile to reference the parent images using the image digests
 
 > Note: You may need to modify the digest values to match those output in the previous command.
 
