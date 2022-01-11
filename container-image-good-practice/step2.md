@@ -24,7 +24,7 @@ Check the image size `docker image ls step2:normal`{{execute}}
 
 ## Multi-stage Builds
 
-[Multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/) allow you to split your Dockerfile into different stages using multiple FROM statements. Only the last stagein the Dockerfile is included in the final image. This enables you to build the go application in the first stage and then copy the output of the build into a much smaller image in the final stage.
+[Multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/) allow you to split your Dockerfile into different stages using multiple FROM statements. Only the last stage in the Dockerfile is included in the final image. This enables you to build the go application in the first stage and then copy the output of the build into a much smaller image in the final stage.
 
 Update the Dockerfile to use a multi-stage build
 
@@ -42,7 +42,7 @@ ENV GO111MODULE=auto \
 RUN go build -o app .
 
 # Runtime image
-FROM alpine:3.14
+FROM alpine
 
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/

@@ -8,7 +8,7 @@ Change to the step3 directory `cd ~/step3`{{execute}}
 
 Take a look at the new Dockerfile for the application `step3/Dockerfile`{{open}}
 
-> The application is built as part of the container build.
+> The FROM lines now include the tags to identify specific versions of each parent image.
 
 Build the container image `docker image build -t step3:multi-alpine .`{{execute}}
 

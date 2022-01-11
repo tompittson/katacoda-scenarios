@@ -21,7 +21,7 @@ docker image pull alpine:3.14
 
 View the sizes of the different images `docker image ls | grep -E '(nginx|alpine)[ ]+[0-9].*'`{{execute}}
 
-> The normal nginx image is based on Debian hence the big size difference. The alpine image is used as the parent image for the nginx alpine variant.
+> The normal nginx image is based on Debian hence the big size difference. The alpine base image is used as the parent image for the nginx alpine variant.
 
 ## Inspect the Image
 
@@ -29,6 +29,6 @@ Use the **docker inspect** command to view information about the Debian based im
 
 View the image history `docker history nginx:1.20.2`{{execute}}
 
-You can compare this with the [Dockerfile](https://github.com/nginxinc/docker-nginx/blob/b0e153a1b644ca8b2bd378b14913fff316e07cf2/stable/debian/Dockerfile) the different Dockerfiles are linked to on the nginx image [Docker Hub](https://hub.docker.com/_/nginx) page.
+You can compare the history with the [Dockerfile](https://github.com/nginxinc/docker-nginx/blob/b0e153a1b644ca8b2bd378b14913fff316e07cf2/stable/debian/Dockerfile), the Dockerfiles for the different tags are linked to on the nginx image [Docker Hub](https://hub.docker.com/_/nginx) page.
 
 > Note that the history does not show the FROM instruction, it simply takes the layers from the parent image.

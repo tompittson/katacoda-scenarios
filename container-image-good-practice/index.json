@@ -1,6 +1,6 @@
 {
     "title": "Container Image Good Practice",
-    "description": "Step through different stages of applying good practice to container image creation such as minimising size, multi-stage builds, version pinning, running as non-root and image hardening.",
+    "description": "Step through some of the good practice you can follow when creating container images such as minimising size, multi-stage builds, version pinning, running as non-root and image hardening.",
     "difficulty": "medium",
     "time": "40 minutes",
     "details": {

@@ -20,8 +20,8 @@ RUN apk --no-cache add ca-certificates
 WORKDIR /home/nonroot
 COPY --from=builder --chown=nonroot:nonroot /go/src/app/app .
 
-# [New] remove the shell
-RUN rm -rf /bin/*
+# [New] make the /tmp part of the filesystem read-only
+RUN chmod a-w /tmp
 
 USER 1001:1001
 
