@@ -36,7 +36,7 @@ Look at the filesystem `ls -lR`{{execute}}
 
 ## Sharing Layers
 
-One of the great things about container images and their use of the union file system is that read-only layers can be shared between different images. E.g. if you have lots of applications that use the same base image it is only the delta specific to each application that needs to be downloaded when running on the same host.
+One of the great things about container images and their use of the union file system is that read-only layers can be shared between different images. E.g. if you have lots of applications that use the same parent image it is only the delta specific to each application that needs to be downloaded when running on the same host.
 
 Lets see an example of this.
 

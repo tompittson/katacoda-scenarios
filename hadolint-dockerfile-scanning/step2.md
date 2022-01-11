@@ -3,7 +3,7 @@ An updated Dockerfile is listed below which contains the fixes to the issues hig
 ## Updated Dockerfile
 
 <pre class="file" data-filename="Dockerfile" data-target="replace">
-# specify the version of the alpine base image
+# specify the version of the alpine parent image
 FROM alpine:3.13
 
 USER root
