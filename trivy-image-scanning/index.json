@@ -1,0 +1,40 @@
+{
+    "title": "Trivy Image Scanning",
+    "description": "Use trivy to scan a different container images and understand the output",
+    "difficulty": "medium",
+    "time": "10 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Dockerfile Scan",
+                "text": "step1.md"
+            },
+            {
+                "title": "Fix Issues",
+                "text": "step2.md"
+            }
+        ],
+        "intro": {
+            "courseData": "background.sh",
+            "code": "foreground.sh",
+            "text": "intro.md"
+        },
+        "finish": {
+            "text": "finish.md"
+        },
+        "assets": {
+            "client": [
+                { "file": "scan-local-images.sh", "target": "~/" },
+                { "file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x" }
+            ]
+        }
+    },
+    "environment": {
+        "uilayout": "editor-terminal",
+        "hideHiddenFiles": true,
+        "uieditorpath": "/root/"
+    },
+    "backend": {
+        "imageid": "ubuntu"
+    }
+}
