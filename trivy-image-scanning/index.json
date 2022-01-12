@@ -24,7 +24,7 @@
         },
         "assets": {
             "client": [
-                { "file": "scan-local-images.sh", "target": "~/" },
+                { "file": "scan-local-images.sh", "target": "~/", "chmod": "+x" },
                 { "file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x" }
             ]
         }

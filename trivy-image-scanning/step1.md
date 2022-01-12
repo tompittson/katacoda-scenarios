@@ -18,4 +18,4 @@ Pull the latest nginx:alpine image `docker image pull nginx:alpine`{{execute}}
 
 Scan the image using trivy `trivy image --severity "HIGH,CRITICAL" nginx:alpine`{{execute}}
 
-> Hopefully there were no vulnerabilities in the latest image. This demonstrates the importance of using the most up-to-date parent/base image you can and keeping that up-to-date.
+> Hopefully there were no vulnerabilities in the latest image. This demonstrates the importance of using the most up-to-date parent/base image you can and making sure that you update it frequently to pickup the latest security patches and fixes.
