@@ -4,6 +4,8 @@ In this step you are going to look at the importance of PID 1 in a container and
 
 In the previous step you saw that within the container the initial process has PID 1. The container lifetime is based on this process and when it terminates the container also stops. You can see this in action using the commands below.
 
+Open a second terminal window `echo "Terminal 2"`{{execute T2}}
+
 Run a container that will sleep for 10s `docker run -d --name docker-sleep-10s busybox sleep 10`{{execute T1}}
 
 Watch the containers running on the host `watch -d docker ps -a`{{execute T2}}
@@ -15,6 +17,8 @@ The container will also stop if the PID 1 process is terminated using a signal
 Start another container with a longer sleep `docker run -d --name docker-sleep busybox sleep infinity`{{execute T1}}
 
 Check the container is running `docker ps -a`{{execute T1}}
+
+View the process tree of the container on the host `pstree -Ssp $(docker inspect --format '{{.State.Pid}}' docker-sleep)`{{execute T1}}
 
 Send a SIGKILL signal to the process on the host `kill -9 $(docker inspect --format '{{.State.Pid}}' docker-sleep)`{{execute T1}}
 

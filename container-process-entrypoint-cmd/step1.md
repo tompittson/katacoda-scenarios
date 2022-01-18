@@ -48,6 +48,6 @@ Remove the two containers created in this step
 
 ```
 docker stop -t 0 docker-sleep
-nerdctl stop nerdctl-sleep
+nerdctl stop -t 0 nerdctl-sleep
 nerdctl rm nerdctl-sleep
 ```{{execute}}
