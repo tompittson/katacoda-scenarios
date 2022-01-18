@@ -1,0 +1,49 @@
+{
+    "title": "Container Processes",
+    "description": "A look at the main process in a container, how it is configured and the importance of PID 1.",
+    "difficulty": "medium",
+    "time": "40 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Running a Container",
+                "text": "step1.md"
+            },
+            {
+                "title": "PID 1 and Signals",
+                "text": "step2.md"
+            },
+            {
+                "title": "ENTRYPOINT vs CMD",
+                "text": "step3.md"
+            },
+            {
+                "title": "Shell vs Exec Forms",
+                "text": "step4.md"
+            },
+            {
+                "title": "Zombie Process Reaping",
+                "text": "step5.md"
+            }
+        ],
+        "intro": {
+            "text": "intro.md"
+        },
+        "finish": {
+            "text": "finish.md"
+        },
+        "assets": {
+            "client": [
+                { "file": "*", "target": "~/" }
+            ]
+        }
+    },
+    "environment": {
+        "uilayout": "editor-terminal",
+        "hideHiddenFiles": true,
+        "uieditorpath": "/root/"
+    },
+    "backend": {
+        "imageid": "ubuntu"
+    }
+}

@@ -1,0 +1,1 @@
+In this scenario, you will look at how processes are isolated in containers, the importance of PID 1, how to define the starting process correctly and also a look at some of the problems that can be encountered if not done correctly.
