@@ -1,4 +1,4 @@
-The previous step you explored the ENTRYPOINT and CMD instructions. You used the ***exec*** form of the two instructions but there is also an alternate ***shell*** form which you will look at in this step.
+In the previous step you explored the ENTRYPOINT and CMD instructions. You used the ***exec*** form of the two instructions but there is also an alternate ***shell*** form which you will look at in this step.
 
 There are actually three instructions that can be defined in both *shell* and *exec* forms, CMD, ENTRYPOINT and [RUN](https://docs.docker.com/engine/reference/builder/#run). This step will not look at the RUN instruction but it is worth noting that unlike [CMD](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#cmd) and [ENTRYPOINT](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#entrypoint) the preferred form for [RUN](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run) is the *shell* form.
 
@@ -60,7 +60,7 @@ RUN apt-get update \
 # "cowsay" installs to /usr/games
 ENV PATH=$PATH:/usr/games
 
-# [New] changed CMD sleep instead of cowsay
+# [New] changed to use both ENTRYPOINT and CMD in shell forms (this will error)
 ENTRYPOINT sleep
 CMD 20
 </pre>
@@ -86,7 +86,7 @@ RUN apt-get update \
 # "cowsay" installs to /usr/games
 ENV PATH=$PATH:/usr/games
 
-# [New] changed CMD sleep instead of cowsay
+# [New] changed to just ENTRYPOINT in shell form
 ENTRYPOINT sleep 300
 </pre>
 
