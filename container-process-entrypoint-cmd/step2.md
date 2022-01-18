@@ -18,7 +18,7 @@ Check the container is running `docker ps -a`{{execute T1}}
 
 Send a SIGKILL signal to the process on the host `kill -9 $(docker inspect --format '{{.State.Pid}}' docker-sleep)`{{execute T1}}
 
-Check the status of the container `docker ps -a docker-sleep`{{execute T1}}
+Check the status of the container `docker ps -a`{{execute T1}}
 
 > The container has exited because the main process has terminated.
 
@@ -30,7 +30,7 @@ Run another container with a sleep command `docker run -d --rm --name docker-sle
 
 Stop the container (using the time command to see how long it takes) `time docker stop docker-sleep-infinity`{{execute}}
 
-> It takes over 10s! This is because the sleep command does not respond to the SIGTERM signal and the container does not stop until the grace period is over and a SIGKILL signal is sent to the process. This demonstrates why it is important that the main process in a containers responds correctly to the termination signals. Imagine the scenario where the application is in the middle of a write operation to a file and it is suddenly killed.
+> It takes over 10s! This is because the sleep command does not respond to the SIGTERM signal and the container does not stop until the grace period is over and a SIGKILL signal is sent to the process. This demonstrates why it is important that the main process in a container responds correctly to the termination signals. Imagine the scenario where the application is in the middle of a write operation to a file and it is suddenly killed.
 
 Run the container again this time with an init process that correctly responds to the signals `docker run -d --init --rm --name docker-sleep-infinity busybox sleep infinity`{{execute}}
 

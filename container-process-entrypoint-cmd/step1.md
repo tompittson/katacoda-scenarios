@@ -1,4 +1,4 @@
-In this step you will look at 2 different CLIs for running containers. The environment already has CLIs for both docker and [nerdctl](https://github.com/containerd/nerdctl) installed.
+In this step you will look at 2 different CLIs for running containers. The environment should already have both the docker and [nerdctl](https://github.com/containerd/nerdctl) CLIs installed.
 
 **nerdctl** is a docker compatible CLI for interacting directly with containerd to manage containers. 
 
@@ -36,9 +36,9 @@ Do the same using **nerdctl top** `nerdctl top nerdctl-sleep`{{execute}}
 
 > These commands show the sleep processes again but include a PID and PPID (Parent Process ID) that are not PID 1. These process IDs are those allocated by the host as you can see using the commands below.
 
-View the process tree on the host of the docker container `pstree -Ssp $(docker inspect --format '{{.State.Pid}}' docker-sleep)`{{execute}}
+View the process tree of the docker container on the host `pstree -Ssp $(docker inspect --format '{{.State.Pid}}' docker-sleep)`{{execute}}
 
-View the process tree on the host of the nerdctl container `pstree -Ssp $(nerdctl inspect --format '{{.State.Pid}}' nerdctl-sleep)`{{execute}}
+View the process tree of the nerdctl container on the host `pstree -Ssp $(nerdctl inspect --format '{{.State.Pid}}' nerdctl-sleep)`{{execute}}
 
 > This shows that processes running in containers are also visible on the host machine. See this [blog post](https://iximiuz.com/en/posts/implementing-container-runtime-shim/) for more information about shims.
 
@@ -47,7 +47,7 @@ View the process tree on the host of the nerdctl container `pstree -Ssp $(nerdct
 Remove the two containers created in this step
 
 ```
-docker stop docker-sleep
+docker stop -t 0 docker-sleep
 nerdctl stop nerdctl-sleep
 nerdctl rm nerdctl-sleep
 ```{{execute}}

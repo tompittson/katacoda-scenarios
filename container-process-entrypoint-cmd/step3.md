@@ -13,7 +13,7 @@ From the Dockerfile reference the CMD instruction has 3 forms:
 
 You will learn about the differences between *shell* and *exec* forms in the next step.
 
-The Dockerfile reference has a good explanation of [how CMD and ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact) interact. You will step through examples of the common ways that the two instructions are used.
+The Dockerfile reference has a good explanation of [how CMD and ENTRYPOINT interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact). This step will guide you through examples of the common ways that the two instructions are used.
 
 > All of the examples will use the preferred *exec* form of the commands.
 
