@@ -36,7 +36,8 @@
         },
         "assets": {
             "client": [
-                { "file": "*", "target": "~/" }
+                { "file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x" },
+                { "file": "step*", "target": "~/" }
             ]
         }
     },
