@@ -1,0 +1,26 @@
+{
+    "title": "Container Security",
+    "description": "A look at container security through an example of container breakout.",
+    "difficulty": "medium",
+    "time": "10 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Container Breakout",
+                "text": "step1.md"
+            }
+        ],
+        "intro": {
+            "text": "intro.md"
+        },
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "environment": {
+        "uilayout": "terminal"
+    },
+    "backend": {
+        "imageid": "ubuntu"
+    }
+}

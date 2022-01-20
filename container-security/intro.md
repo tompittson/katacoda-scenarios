@@ -1,0 +1,1 @@
+In this scenario, you will take a look at container security and some of the steps you can take to ensure your containers are secure when they run.
