@@ -16,7 +16,9 @@ Create a ConfigMap using *kubectl* in the imperative form:
 
 `kubectl create configmap step4-config --from-literal=key=value --from-literal=foo=bar`{{execute}}
 
-Check the create ConfigMap `kubectl get configmap -o yaml`{{execute}}
+Check the created ConfigMap `kubectl get configmap -o yaml`{{execute}}
+
+> A ConfigMap is an example of a object that exists purely in the Kubernetes API and is then consumed by other other objects such as pods.
 
 ## Declarative Commands
 
@@ -30,7 +32,7 @@ Apply the yaml file to create the pod `kubectl apply -f pod.yaml`{{execute}}
 
 Update the file to use a specific tag for the nginx image:
 
-`kubectl run step4-pod --image=nginx:1.20 --namespace default --dry-run=client -o yaml | tee pod.yaml`
+`kubectl run step4-pod --image=nginx:1.20 --namespace default --dry-run=client -o yaml | tee pod.yaml`{{execute}}
 
 Apply the updated yaml file to modify the pod `kubectl apply -f pod.yaml`{{execute}}
 

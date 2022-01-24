@@ -1,6 +1,6 @@
 In this step you will look at how objects/resources are represented in Kubernetes.
 
-> One thing that is key to understand is that when you create a Kubernetes object it is only a **record of intent**. Depending on the type of resource one or more Kubernetes system componenets will constantly work to ensure that, what you defined in the object, is implemented. By creating an object, you're defining the **desired state** but there are no guarantees that it can be fulfilled.
+> One thing that is key to understand is that when you create a Kubernetes object it is only a **record of intent**. Depending on the type of resource one or more Kubernetes system componenets will perform the actions required to create and then maintain the underlying items defined in the object. By creating an object, you're defining the **desired state** but there are no guarantees that it can be fulfilled.
 
 ## Different Resource Types
 
@@ -43,6 +43,8 @@ List the pod created `kubectl get pods`{{execute}}
 
 View the pod object `kubectl get pod step3-pod -o yaml`{{execute}}
 
+> The kubectl command to create the pod completed successfully even though the cluster does not have any worker nodes. The success is only signifying the successful creation of the object in the Kubernetes API. The creation of the containers and networking configuration can never be completed as shown in the status which shows the pod is *Unschedulable*.
+
 You can also view the object definition before it is created using the *--dry-run=client* flag.
 
 `kubectl run step3-pod2 --image=busybox:latest --dry-run=client -o yaml`{{execute}}
@@ -66,3 +68,5 @@ Take a look at the list of all API resource types again (the *-o wide* flag can 
 The `kubectl api-resources` command does not tell you what versions of the API groups are in use on the current cluster. You can find this information using another command.
 
 `kubectl api-versions`{{execute}}
+
+> See the documentation for more details about [API versioning](https://kubernetes.io/docs/concepts/overview/kubernetes-api/#api-groups-and-versioning) and the [deprecation policy](https://kubernetes.io/docs/reference/using-api/deprecation-policy/). 

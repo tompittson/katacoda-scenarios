@@ -34,11 +34,11 @@ kubectl is just a convienient way to interact with the Kubernetes API, it is imp
 
 Get all the pods running in the cluster `kubectl get pods --all-namespaces`{{execute}}
 
-Describe a node `kubectl describe nodes node01`{{execute}}
+Describe the control plane node `kubectl describe node controlplane`{{execute}}
 
 View the logs from a pod `kubectl logs kube-apiserver-controlplane --namespace kube-system`{{execute}}
 
-> The last command included a flag for the namespace, namespaces are used to group namespaces scoped resources. This will be explored more in the next step.
+> The last command included a flag for the namespace, namespaces are used to group namespaced scoped resources. This will be explored more in the next step.
 
 ## Abbreviations and Aliases
 

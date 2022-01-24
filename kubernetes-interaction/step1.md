@@ -4,17 +4,6 @@ In this step you will setup the Kubernetes cluster used in the rest of the steps
 
 `kubeadm init --kubernetes-version $(kubeadm version -o short)`{{execute HOST1}}
 
-> Check the output of the command, once complete you need to copy the `kubeadm join ...` command.
-
-## Join Workder Node
-
-Copy and paste the `kubeadm join...` command into the bottom terminal for node01 e.g. (the token and cert hash will be different)
-
-```
-kubeadm join 172.17.0.43:6443 --token sapneu.ugsnyj5192zo27n8 \
-    --discovery-token-ca-cert-hash sha256:a76468ab1433718fee1366edffa6f56d52c9cf4990a8159918cd1b96fe301a24 
-```
-
 ## Configure Kube Config
 
 The [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) CLI needs to be configured so that it can connect to the control plane of a cluster. Execute the commands below (also displayed in the kubeadm init output) to setup the kube config on the control-plane node.

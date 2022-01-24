@@ -6,7 +6,7 @@
     "details": {
         "steps": [
             {
-                "title": "Setup Cluster",
+                "title": "Cluster Setup",
                 "text": "step1.md"
             },
             {
@@ -22,7 +22,7 @@
                 "text": "step4.md"
             },
             {
-                "title": "Calling API Directly",
+                "title": "Calling the API Directly",
                 "text": "step5.md"
             }
         ],
