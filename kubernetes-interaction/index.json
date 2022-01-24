@@ -15,11 +15,11 @@
             },
             {
                 "title": "Exploring the API Resources",
-                "text": "step4.md"
+                "text": "step3.md"
             },
             {
                 "title": "Imperitive vs Declarative",
-                "text": "step3.md"
+                "text": "step4.md"
             },
             {
                 "title": "Calling API Directly",
@@ -27,24 +27,14 @@
             }
         ],
         "intro": {
-            "courseData": "background.sh",
-            "code": "foreground.sh",
             "text": "intro.md"
         },
         "finish": {
             "text": "finish.md"
-        },
-        "assets": {
-            "client": [
-                { "file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x" },
-                { "file": "step3/*", "target": "~/" },
-                { "file": "step4/*", "target": "~/" },
-                { "file": "step5/*", "target": "~/" }
-            ]
         }
     },
     "environment": {
-        "uilayout": "terminal-terminal"
+        "uilayout": "terminal"
     },
     "backend": {
         "imageid": "kubernetes-cluster:1.18"

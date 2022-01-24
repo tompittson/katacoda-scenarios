@@ -1,1 +1,1 @@
-In this scenario, you will look at the common ways that you can interact with Kubernetes and more specifically the Kubernetes API.
+In this scenario, you will look at the common ways that you can interact with Kubernetes and the Kubernetes API.

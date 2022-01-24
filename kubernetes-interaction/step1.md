@@ -8,7 +8,7 @@ In this step you will setup the Kubernetes cluster used in the rest of the steps
 
 ## Join Workder Node
 
-Copy and paste the `kubeadm join...` command finto the bottom terminal for node01 e.g. (the token and cert hash will be different)
+Copy and paste the `kubeadm join...` command into the bottom terminal for node01 e.g. (the token and cert hash will be different)
 
 ```
 kubeadm join 172.17.0.43:6443 --token sapneu.ugsnyj5192zo27n8 \

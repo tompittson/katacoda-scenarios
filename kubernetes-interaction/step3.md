@@ -1,6 +1,6 @@
-In this step you will look at how objects/resources are represented in Kubernetes .
+In this step you will look at how objects/resources are represented in Kubernetes.
 
-> One thing that is key to understand is that when you create a Kubernetes object **it is only a "record of intent"**. Depending on the type of resource one or more Kubernetes system componenets will constantly work to ensure that, what you defined in the object, is implemented. By creating an object, you're defining the **desired state** but there are no guarantees that it can be fulfilled.
+> One thing that is key to understand is that when you create a Kubernetes object it is only a **record of intent**. Depending on the type of resource one or more Kubernetes system componenets will constantly work to ensure that, what you defined in the object, is implemented. By creating an object, you're defining the **desired state** but there are no guarantees that it can be fulfilled.
 
 ## Different Resource Types
 

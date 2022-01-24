@@ -1,4 +1,4 @@
-In the last step you executed a command using kubectl, in this step we are going to explore it some more.
+In the last step you executed a command using kubectl, in this step you are going to explore it some more.
 
 kubectl (pronounced kube-control, or kube-cuttle, or kube-C-T-L) is a command line tool that lets you control Kubernetes clusters. For configuration, kubectl looks for a file named config in the $HOME/.kube directory.
 
@@ -38,11 +38,11 @@ Describe a node `kubectl describe nodes node01`{{execute}}
 
 View the logs from a pod `kubectl logs kube-apiserver-controlplane --namespace kube-system`{{execute}}
 
-> The last command included a flag for the namespace, namespaces are used to group certain types of resources. This will be explored more in the next step.
+> The last command included a flag for the namespace, namespaces are used to group namespaces scoped resources. This will be explored more in the next step.
 
 ## Abbreviations and Aliases
 
-The *kubectl* executeable is often aliased to just *k* and this should already be done in the terminal session.
+The *kubectl* executeable is often aliased to just *k* and this should already be applied in the terminal session.
 
 Get pods in the kube-system namespace `k get pods --namespace kube-system`{{execute}}
 
