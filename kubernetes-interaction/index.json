@@ -1,0 +1,52 @@
+{
+    "title": "Interacting with Kubernetes",
+    "description": "An introduction into the common ways that you interact with the Kubernetes API.",
+    "difficulty": "medium",
+    "time": "20 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Setup Cluster",
+                "text": "step1.md"
+            },
+            {
+                "title": "kubectl",
+                "text": "step2.md"
+            },
+            {
+                "title": "Exploring the API Resources",
+                "text": "step4.md"
+            },
+            {
+                "title": "Imperitive vs Declarative",
+                "text": "step3.md"
+            },
+            {
+                "title": "Calling API Directly",
+                "text": "step5.md"
+            }
+        ],
+        "intro": {
+            "courseData": "background.sh",
+            "code": "foreground.sh",
+            "text": "intro.md"
+        },
+        "finish": {
+            "text": "finish.md"
+        },
+        "assets": {
+            "client": [
+                { "file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x" },
+                { "file": "step3/*", "target": "~/" },
+                { "file": "step4/*", "target": "~/" },
+                { "file": "step5/*", "target": "~/" }
+            ]
+        }
+    },
+    "environment": {
+        "uilayout": "terminal-terminal"
+    },
+    "backend": {
+        "imageid": "kubernetes-cluster:1.18"
+    }
+}
